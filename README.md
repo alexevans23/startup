@@ -7,6 +7,6 @@ I want to create a website that is designed to uplift, encourage, and inspire ev
 ![inpsire page](https://user-images.githubusercontent.com/122852344/214470030-387f5099-2644-40ae-b8db-a19ea702d813.jpg)
 ![motivate page](https://user-images.githubusercontent.com/122852344/214470047-039939ae-b2de-4f8b-a0c6-71718042e789.jpg)
 
-The server's public IP Adrress is http://18.216.183.9
-The console command is ssh -i ~keys\uplift.pem ubuntu@18.216.183.9
+The server's public IP Adrress is 3.129.140.40
+The console command is ssh -i ~keys\uplift.pem ubuntu@3.129.140.40
 This was an interesting project! I am excited to learn more about AWS.
