@@ -9,4 +9,4 @@ I want to create a website that is designed to uplift, encourage, and inspire ev
 
 The server's public IP Adrress is 3.129.140.40
 The console command is ssh -i ~keys\uplift.pem ubuntu@3.129.140.40
-This was an interesting project! I am excited to learn more about AWS.
+Domain name: http://uplift365.click
