@@ -10,3 +10,4 @@ I want to create a website that is designed to uplift, encourage, and inspire ev
 The server's public IP Adrress is 3.129.140.40
 The console command is ssh -i ~keys\uplift.pem ubuntu@3.129.140.40
 Domain name: http://uplift365.click
+To restart caddy: sudo service caddy restart
