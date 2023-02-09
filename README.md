@@ -11,3 +11,5 @@ The server's public IP Adrress is 3.129.140.40
 The console command is ssh -i ~keys\uplift.pem ubuntu@3.129.140.40
 Domain name: http://uplift365.click
 To restart caddy: sudo service caddy restart
+simon URL: simon.uplift365.click
+This was a great exercise. I was confused about how links to different parts of the page would work in my start up project and this explained that all and the formatting.
