@@ -13,3 +13,7 @@ Domain name: http://uplift365.click
 To restart caddy: sudo service caddy restart
 simon URL: simon.uplift365.click
 This was a great exercise. I was confused about how links to different parts of the page would work in my start up project and this explained that all and the formatting.
+
+To deploy to the server: ./deployFiles.sh -k ~/source/repos/keys/uplift.pem -h uplift365.click -s simon
+
+It was good to learn how to connect CSS code to an html document. It was very simple
