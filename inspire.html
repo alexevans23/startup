@@ -1,37 +1,58 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
 	<title>Inspire</title>
-</head>
-<body>
-	<!-- Navigation bar -->
-	<div>
-		<a href="index.html">Uplift 365</a>
-		<a href="encourage.html">Encourage</a>
-		<a>Inspire</a>
-		<a href="motivate.html">Motivate</a>
-	</div>
-	
-	<!-- Page content -->
-	<h1>Welcome to Inspire!</h1>
-	
-	<!-- Post form -->
+	<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+	crossorigin="anonymous"
+  />
+
+  </head>
+  <body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Uplift 365</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+		<li class="nav-item">
+		  <a class="nav-link" href="index.html">Home</a>
+		</li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Encourage</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="inspire.html">Inspire</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="motivate.html">Motivate</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+	<h1>Inspire</h1>
 	<form>
-		<label for="name">Name:</label>
-		<input type="text" id="name" name="name"><br>
-		<label for="title">Title:</label>
-		<input type="text" id="title" name="title"><br>
-		<label for="story">Story:</label>
-		<textarea id="story" name="story"></textarea><br>
-		<label for="photo">Photo:</label>
-		<input type="file" id="photo" name="photo"><br>
-		<button type="submit">Submit</button>
+	  <div class="form-group">
+		<label for="postTitle">Title</label>
+		<input type="text" class="form-control" id="postTitle" placeholder="Enter post title" required>
+	  </div>
+	  <div class="form-group">
+		<label for="postContent">Content</label>
+		<textarea class="form-control" id="postContent" rows="5" placeholder="Enter post content" required></textarea>
+	  </div>
+	  <div class="form-group">
+		<label for="postImage">Image</label>
+		<input type="file" class="form-control-file" id="postImage">
+	  </div>
+	  <button type="submit" class="btn btn-primary">Submit</button>
 	</form>
+  </div>
 	
-	<!-- Post display area -->
-	<div id="post-display">
-		<!-- Posts will be displayed here -->
-	</div>
-	
-</body>
+  </body>
 </html>
