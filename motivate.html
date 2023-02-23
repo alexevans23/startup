@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Uplift 365</title>
+	<title>Motivate</title>
 </head>
 <body>
 	<div>
-		<a>Uplift 365</a>
+		<a href="index.html">Uplift 365</a>
 		<a href="encourage.html">Encourage</a>
 		<a href="inspire.html">Inspire</a>
-		<a href="motivate.html">Motivate</a>
+		<a>Motivate</a>
 	</div>
 	
-	<h1>Welcome to Uplift 365!</h1>
+	<h1>Welcome to Motivate!</h1>
 	
 	<form>
-		<label for="subject">Choose a subject:</label>
+		<label for="subject">Subject:</label>
 		<select id="subject" name="subject">
 			<option value="motivation">Motivation</option>
 			<option value="happiness">Happiness</option>
@@ -22,12 +22,16 @@
 			<option value="Charity">Charity</option>
       		<option value="patience">Patience</option>
       		<option value="endurance">Endurance</option>
-		</select>
-		<button type="submit">Enter</button>
+		</select><br>
+		<label for="quote">Quote:</label>
+		<textarea id="quote" name="quote"></textarea><br>
+		<label for="author">Author:</label>
+		<input type="text" id="author" name="author"><br>
+		<button type="submit">Submit</button>
 	</form>
 	
 	<div id="quote-display">
-
+		
 	</div>
 	
 </body>
