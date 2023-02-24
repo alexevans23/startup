@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Motivate</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
 	<link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -11,7 +14,7 @@
   </head>
   
   <body>
-   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+   <nav class="navbar navbar-expand-lg">
     <a class="navbar-brand" href="#">Uplift 365</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -21,39 +24,43 @@
 		<li class="nav-item">
 		  <a class="nav-link" href="index.html">Home</a>
 		</li>
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="encourage.html">Encourage</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="inspire.html">Inspire</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="motivate.html">Motivate</a>
         </li>
       </ul>
     </div>
   </nav>
 
-  <div class="container mt-5">
+  <div class="container-fluid">
     <h1 class="text-center mb-5">Motivate</h1>
+    <hr>
+    <h6>Share a quote that will be added to the database to uplift others:</h6>
     <form>
       <div class="form-group">
-        <label for="quoteSubject">Quote Subject</label>
+        <label for="quoteSubject">Subject</label>
         <select class="form-control" id="quoteSubject">
-          <option>Subject 1</option>
-          <option>Subject 2</option>
-          <option>Subject 3</option>
+          <option>Motivation</option>
+          <option>Happiness</option>
+          <option>Positivity</option>
+		  <option>Patience</option>
+		  <option>Charity</option>
         </select>
       </div>
       <div class="form-group">
-        <label for="quoteText">Quote Text</label>
+        <label for="quoteText">Quote</label>
         <textarea class="form-control" id="quoteText" rows="3"></textarea>
       </div>
       <div class="form-group">
-        <label for="quoteAuthor">Quote Author</label>
+        <label for="quoteAuthor">Author</label>
         <input type="text" class="form-control" id="quoteAuthor">
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary">Uplift</button>
     </form>
   </div>
 	
