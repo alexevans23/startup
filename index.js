@@ -20,7 +20,7 @@ const quotesBySubject = {
       "Tolerance and patience should not be read as signs of weakness, they are signs of strength. -Dalai Lama"
     ],
     charity: [
-      "Charity is injurious unless it helps the recipient to become independent of it. -John D. Rockefeller",
+      "",
       "The best way to find yourself is to lose yourself in the service of others. -Mahatma Gandhi",
       "No one has ever become poor by giving. -Anne Frank"
     ]
