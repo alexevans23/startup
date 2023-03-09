@@ -17,3 +17,5 @@ This was a great exercise. I was confused about how links to different parts of 
 To deploy to the server: ./deployFiles.sh -k ~/source/repos/keys/uplift.pem -h uplift365.click -s simon
 
 It was good to learn how to connect CSS code to an html document. It was very simple
+
+I still need to add Node.Js in order for my posts to be saved. That is the next step. It is a sort of API call type of thing using a command called POST
