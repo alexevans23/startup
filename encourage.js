@@ -1,64 +1,45 @@
-// Define variables to store HTML elements
-const postTitleInput = document.getElementById('postTitle');
-const postContentInput = document.getElementById('postContent');
-const postForm = document.querySelector('form');
-const postList = document.getElementById('postList');
+// Array to hold all the submitted posts
+let posts = [];
 
-// Define a variable to keep track of the ID for the next post
-let nextPostId = 1;
+// DOM elements
+const postContainer = document.getElementById("postContainer");
+const postForm = document.querySelector("form");
+const postTitleInput = document.getElementById("postTitle");
+const postContentInput = document.getElementById("postContent");
 
-// Define an array to store all the posts
-const posts = [];
+// Function to add a new post to the array and display it on the page
+function addPost(title, content) {
+  // Create a new post object and add it to the array
+  const post = { title: title, content: content };
+  posts.push(post);
 
-// Define a function to add a post to the page
-function addPostToPage(post) {
-  // Create HTML elements for the post title and content
-  const titleElement = document.createElement('h3');
-  const contentElement = document.createElement('p');
-
-  // Set the text of the title and content elements to the post title and content
-  titleElement.textContent = post.title;
-  contentElement.textContent = post.content;
-
-  // Create a container div for the post elements
-  const postElement = document.createElement('div');
-  postElement.classList.add('my-5');
-
-  // Add the title and content elements to the container div
-  postElement.appendChild(titleElement);
-  postElement.appendChild(contentElement);
-
-  // Add the container div to the post list
-  postList.appendChild(postElement);
+  // Create a new post element and add it to the page
+  const postElement = document.createElement("div");
+  postElement.classList.add("card", "my-3");
+  postElement.innerHTML = `
+    <div class="card-body">
+      <h5 class="card-title">${title}</h5>
+      <p class="card-text">${content}</p>
+    </div>
+  `;
+  postContainer.appendChild(postElement);
 }
 
-// Define a function to handle form submission
-function handleFormSubmit(event) {
-  // Prevent the default form submission behavior
-  event.preventDefault();
+// Function to handle form submission
+function handleSubmit(event) {
+  event.preventDefault(); // Prevent page from reloading
 
   // Get the values from the form inputs
-  const postTitle = postTitleInput.value;
-  const postContent = postContentInput.value;
+  const title = postTitleInput.value.trim();
+  const content = postContentInput.value.trim();
 
-  // Create a new post object with the values and the next ID
-  const post = {
-    id: nextPostId,
-    title: postTitle,
-    content: postContent,
-  };
+  // Add the post to the array and display it on the page
+  addPost(title, content);
 
-  // Add the post to the array and increment the next ID
-  posts.push(post);
-  nextPostId++;
-
-  // Clear the form inputs
-  postTitleInput.value = '';
-  postContentInput.value = '';
-
-  // Add the new post to the page
-  addPostToPage(post);
+  // Reset the form inputs
+  postTitleInput.value = "";
+  postContentInput.value = "";
 }
 
-// Add a submit event listener to the form
-postForm.addEventListener('submit', handleFormSubmit);
+// Event listener for form submission
+postForm.addEventListener("submit", handleSubmit);
