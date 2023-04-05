@@ -19,3 +19,13 @@ To deploy to the server: ./deployFiles.sh -k ~/source/repos/keys/uplift.pem -h u
 It was good to learn how to connect CSS code to an html document. It was very simple
 
 I still need to add Node.Js in order for my posts to be saved. That is the next step. It is a sort of API call type of thing using a command called POST
+
+
+I was able to add the Simon Service fairly easily. It will be nice to see how it works because I will need to use this service as well as MongoDB extenisively on my project.
+I enjoyed learning about MongoDB. I am fairly familiar with parsing through JSONS and getting the information I want from my RA position, but it was handy to see what the other side of that looks like. I am a little confused on how to set up an environment with my login credentials still, but I will continue studying that page and add that functionality when I can. I am also a little confused about when scores are populated to the database. Should they show up there each time I play the simon game?
+
+
+I am surprised how simple this was to figure out. It is very straightforward. I accidentally made my password 1 character, but I was amazed that I could even save it to my Google account. I love how it uses cookies to keep me logged in too. This was a very helpful and cool aspect of the project. The key really is just applying that same functionality to my JS and HTML. I think having a page that pops up first asking for a login will be easier to apply to my startup than what I was planningv before.
+
+
+This was also very easy to implement. I definitely want to continue looking into Node.js and all the different packages available because it really brings a new level to the functionality of the website. I was able to test the new WebSocket implementation with my wife and it works great. 
