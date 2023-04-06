@@ -7,6 +7,18 @@ const postForm = document.querySelector("form");
 const postTitleInput = document.getElementById("postTitle");
 const postContentInput = document.getElementById("postContent");
 
+// WebSocket connection
+const ws = new WebSocket("ws://startup.uplift365.click:4000/api/encourage");
+
+ws.onopen = () => {
+  console.log("WebSocket connection opened.");
+};
+
+ws.onmessage = (event) => {
+  const message = JSON.parse(event.data);
+  addPost(message.title, message.content);
+};
+
 // Function to add a new post to the array and display it on the page
 function addPost(title, content) {
   // Create a new post object and add it to the array
@@ -33,8 +45,8 @@ function handleSubmit(event) {
   const title = postTitleInput.value.trim();
   const content = postContentInput.value.trim();
 
-  // Add the post to the array and display it on the page
-  addPost(title, content);
+  // Send the post data through WebSocket
+  ws.send(JSON.stringify({ title, content }));
 
   // Reset the form inputs
   postTitleInput.value = "";

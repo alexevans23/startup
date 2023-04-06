@@ -1,31 +1,68 @@
 const express = require('express');
+const MongoClient = require('mongodb').MongoClient;
+const expressWs = require('express-ws');
 const app = express();
+expressWs(app);
 
-// The service port. In production the application is statically hosted by the service on the same port.
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
 
-// JSON body parsing using built-in middleware
-app.use(express.json());
+// Replace these variables with your MongoDB connection details
+const dbName = 'your-db-name';
+const uri = 'mongodb+srv://username:password@cluster.mongodb.net/' + dbName + '?retryWrites=true&w=majority';
 
-// Serve up the application's static content
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-// Router for service endpoints
 var apiRouter = express.Router();
-app.use(`/api`, apiRouter);
+app.use('/api', apiRouter);
 
-// GetScores
-apiRouter.get('/scores', (_req, res) => {
-  res.send(scores);
+// Encourage WebSocket route
+app.ws('/api/encourage', (ws, req) => {
+  ws.on('message', (msg) => {
+    app.getWss().clients.forEach((client) => {
+      client.send(msg);
+    });
+  });
 });
 
-// SubmitScore
-apiRouter.post('/score', (req, res) => {
-  scores = updateScores(req.body, scores);
-  res.send(scores);
+// Inspire routes
+apiRouter.post('/inspire', async (req, res) => {
+  const post = {
+    title: req.body.title,
+    content: req.body.content,
+    image: req.body.image,
+  };
+
+  try {
+    const client = await MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+    const db = client.db(dbName);
+    const collection = db.collection('inspire');
+    await collection.insertOne(post);
+    await client.close();
+
+    res.status(201).json({ message: 'Post created successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Error submitting post' });
+  }
 });
 
-// Return the application's default page if the path is unknown
+apiRouter.get('/inspire', async (req, res) => {
+  try {
+    const client = await MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+    const db = client.db(dbName);
+    const collection = db.collection('inspire');
+    const posts = await collection.find({}).toArray();
+    await client.close();
+
+    res.status(200).json(posts);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Error retrieving posts' });
+  }
+});
+
 app.use((_req, res) => {
   res.sendFile('index.html', { root: 'public' });
 });
@@ -33,27 +70,3 @@ app.use((_req, res) => {
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
-
-// updateScores considers a new score for inclusion in the high scores.
-// The high scores are saved in memory and disappear whenever the service is restarted.
-let scores = [];
-function updateScores(newScore, scores) {
-  let found = false;
-  for (const [i, prevScore] of scores.entries()) {
-    if (newScore.score > prevScore.score) {
-      scores.splice(i, 0, newScore);
-      found = true;
-      break;
-    }
-  }
-
-  if (!found) {
-    scores.push(newScore);
-  }
-
-  if (scores.length > 10) {
-    scores.length = 10;
-  }
-
-  return scores;
-}
