@@ -28,4 +28,6 @@ I enjoyed learning about MongoDB. I am fairly familiar with parsing through JSON
 I am surprised how simple this was to figure out. It is very straightforward. I accidentally made my password 1 character, but I was amazed that I could even save it to my Google account. I love how it uses cookies to keep me logged in too. This was a very helpful and cool aspect of the project. The key really is just applying that same functionality to my JS and HTML. I think having a page that pops up first asking for a login will be easier to apply to my startup than what I was planningv before.
 
 
-This was also very easy to implement. I definitely want to continue looking into Node.js and all the different packages available because it really brings a new level to the functionality of the website. I was able to test the new WebSocket implementation with my wife and it works great. 
+This was also very easy to implement. I definitely want to continue looking into Node.js and all the different packages available because it really brings a new level to the functionality of the website. I was able to test the new WebSocket implementation with my wife and it works great.
+
+React honestly was not as bad as some people were making it out to be. I feel that the format was very important and may be hard to duplicate on my own, but the instructions were clear and easy to follow.
